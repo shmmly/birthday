@@ -1,6 +1,6 @@
 # birthday
 
-> A Vue.js project
+> A Vue.js project for notify somebody birthday
 
 ## Build Setup
 
