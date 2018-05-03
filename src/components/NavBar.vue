@@ -1,9 +1,9 @@
 <template>
   <div>
     <tab>
-      <tab-item selected @on-item-click="onItemClick">已发货</tab-item>
-      <tab-item @on-item-click="onItemClick">未发货</tab-item>
-      <tab-item @on-item-click="onItemClick">全部订单</tab-item>
+      <tab-item selected @on-item-click="onItemClick">{{items[0].name}}</tab-item>
+      <tab-item @on-item-click="onItemClick">{{items[1].name}}</tab-item>
+      <tab-item @on-item-click="onItemClick">{{items[2].name}}</tab-item>
     </tab>
   </div>
 </template>
@@ -17,7 +17,7 @@
       Tab,
       TabItem
     },
-    prop: {
+    props: {
       items: {
         required: true,
         type: Array
@@ -25,7 +25,17 @@
     },
     methods: {
       onItemClick(index) {
-        console.log(index)
+        switch (index) {
+          case 0:
+            this.$router.push(this.items[0].url)
+            break;
+          case 1:
+            this.$router.push(this.items[1].url)
+            break;
+          case 2:
+            this.$router.push(this.items[2].url)
+            break;
+        }
       }
     }
   }

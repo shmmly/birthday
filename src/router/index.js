@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 // import Home from '@/pages/home/index'
 const Home = () => import('@/pages/home/index')
-
+const Dynamic = () => import('@/pages/dynamic/index')
 Vue.use(Router)
 
 export default new Router({
@@ -21,7 +21,9 @@ export default new Router({
         {
           path: 'dynamic',
           //对应命名视图路由
-          components: {}
+          components: {
+            home: Dynamic
+          }
         },
       ]
     },
